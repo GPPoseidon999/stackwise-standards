@@ -10,18 +10,26 @@
 
 ```text
 stackwise-standards/
-|- stacks/      # One folder per framework / library / tool
-|- concerns/    # Cross-cutting rules: testing, performance, build, security, …
-`- meta/        # stack-map.json and default-concerns.json
+|- stacks/        # One folder per framework / library / tool
+|- concerns/      # Cross-cutting rules: testing, performance, build, security, …
+|- meta/          # stack-map.json and default-concerns.json
+|- _templates/    # Copy-paste skeletons for new rules (not synced to product repos)
+`- CHANGELOG.md   # Synced to agents/rules/CHANGELOG.md by stackwise sync
 ```
+
+> Any file or directory whose name starts with `_` is treated as a template
+> and is excluded from the active-rules manifest by `stackwise sync`.
 
 ### Adding a rule to an existing stack
 
 1. Find the folder under `stacks/<stack-name>/` or `concerns/<concern-name>/`.
-2. Create a new `.md` file with a focused, single-topic name (e.g. `error-handling.md`).
-3. Start the file with complete YAML frontmatter (see template below).
+2. Copy `_templates/stack-rule.md` (or `_templates/concern-rule.md`) and rename
+   it to a focused, single-topic filename (e.g. `error-handling.md`).
+3. Fill in the YAML frontmatter completely. Every required field is listed in
+   the template as a commented `# Required:` hint.
 4. Write the rule body in short English markdown — aim for under 60 lines.
-5. Open a pull request with a title like `feat(react): add error-handling rule`.
+5. Add a bullet to the `[Unreleased]` section of `CHANGELOG.md`.
+6. Open a pull request with a title like `feat(react): add error-handling rule`.
 
 ### Adding a new stack
 
@@ -93,18 +101,24 @@ related_rules:
 
 ```text
 stackwise-standards/
-|- stacks/      # 每个框架 / 库 / 工具一个文件夹
-|- concerns/    # 横切规则：测试、性能、构建、安全等
-`- meta/        # stack-map.json 和 default-concerns.json
+|- stacks/        # 每个框架 / 库 / 工具一个文件夹
+|- concerns/      # 横切规则：测试、性能、构建、安全等
+|- meta/          # stack-map.json 和 default-concerns.json
+|- _templates/    # 新规则骨架（不会被同步到业务项目）
+`- CHANGELOG.md   # 由 stackwise sync 同步为 agents/rules/CHANGELOG.md
 ```
+
+> 任何以 `_` 开头命名的文件或目录都被视为模板，`stackwise sync` 不会把它写入 active-rules 清单。
 
 ### 为现有技术栈添加规则
 
 1. 找到 `stacks/<stack-name>/` 或 `concerns/<concern-name>/` 下的对应文件夹。
-2. 新建一个 `.md` 文件，文件名聚焦于单一主题（例如 `error-handling.md`）。
-3. 文件开头必须有完整的 YAML frontmatter（见下方模板）。
+2. 复制 `_templates/stack-rule.md`（或 `_templates/concern-rule.md`），重命名为
+   聚焦单一主题的文件名（例如 `error-handling.md`）。
+3. 按模板里的注释填满所有 `# Required:` 字段。
 4. 规则正文用简短英文 Markdown 编写，尽量控制在 60 行以内。
-5. 以 `feat(react): add error-handling rule` 这样的格式提交 PR。
+5. 在 `CHANGELOG.md` 的 `[Unreleased]` 区块补一条记录。
+6. 以 `feat(react): add error-handling rule` 这样的格式提交 PR。
 
 ### 添加新技术栈
 

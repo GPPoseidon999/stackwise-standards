@@ -11,8 +11,8 @@ applies_to:
   - review
   - e2e
 signals:
-  - page.
-  - @playwright/test
+  - "page."
+  - "@playwright/test"
   - getByRole
 related_rules:
   - testing/e2e-scope

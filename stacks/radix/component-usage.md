@@ -10,7 +10,7 @@ applies_to:
   - implementation
   - review
 signals:
-  - @radix-ui/
+  - "@radix-ui/"
   - asChild
   - Portal
 related_rules:

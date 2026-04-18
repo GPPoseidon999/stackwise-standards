@@ -10,8 +10,8 @@ applies_to:
   - implementation
   - review
 signals:
-  - @/components/ui/
-  - cn(
+  - "@/components/ui/"
+  - "cn("
 related_rules:
   - tailwind/usage
   - radix/component-usage

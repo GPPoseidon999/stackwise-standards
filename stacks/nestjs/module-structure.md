@@ -10,9 +10,9 @@ applies_to:
   - implementation
   - review
 signals:
-  - @Module
-  - @Injectable
-  - @Controller
+  - "@Module"
+  - "@Injectable"
+  - "@Controller"
 related_rules:
   - security/input-validation
   - security/auth-boundaries

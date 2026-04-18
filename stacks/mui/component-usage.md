@@ -10,9 +10,9 @@ applies_to:
   - implementation
   - review
 signals:
-  - @mui/
-  - sx=
-  - <Button
+  - "@mui/"
+  - "sx="
+  - "<Button"
 related_rules:
   - build/import-boundaries
 ---

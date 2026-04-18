@@ -11,7 +11,7 @@ applies_to:
   - review
 signals:
   - as any
-  - @ts-ignore
+  - "@ts-ignore"
   - .ts
 related_rules:
   - typescript/naming
